@@ -1,0 +1,1203 @@
+/* ==========================================
+   リセット・ベーススタイル
+   ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* カラースキーム - 業務効率化とテクノロジーを表現 */
+    --color-primary: #0066cc;        /* メインブルー - 信頼性と専門性 */
+    --color-secondary: #004a99;      /* ダークブルー - 深みと安定感 */
+    --color-accent: #557cd1;         /* ターコイズ - 革新性と自動化 */
+    --color-accent-alt: #0099ff;     /* ライトブルー - 明るさと効率性 */
+    --color-text: #1a2332;           /* ダークネイビー - 視認性の高いテキスト */
+    --color-text-light: #5a6c7d;     /* ミディアムグレーブルー - サブテキスト */
+    --color-bg: #ffffff;             /* 白背景 */
+    --color-bg-dark: #001a33;        /* ダークネイビー背景 */
+    --color-bg-light: #f0f7ff;       /* ライトブルー背景 */
+    --color-border: #d1e3f5;         /* ソフトブルーボーダー */
+    --color-success: #1e00c8;        /* グリーン - 成功・効率化 */
+    --color-gradient-start: #0066cc; /* グラデーション開始 */
+    --color-gradient-end: #00a3cc;   /* グラデーション終了 */
+
+    /* フォントサイズ - より適切なサイズに調整 */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.375rem;
+    --font-size-2xl: 1.75rem;
+    --font-size-3xl: 2.25rem;
+    --font-size-4xl: 3rem;
+    --font-size-5xl: 3.75rem;
+    --font-size-6xl: 4.5rem;
+    --font-size-7xl: 4.5rem;
+
+    /* スペーシング - 参考サイトに合わせてより大胆に */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2.5rem;
+    --spacing-lg: 5rem;
+    --spacing-xl: 8rem;
+    --spacing-2xl: 10rem;
+    --spacing-3xl: 12rem;
+
+    /* トランジション */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Arial, "Yu Gothic", "Meiryo", sans-serif;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    overflow-x: hidden;
+    font-weight: 400;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-base);
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================
+   コンテナ
+   ========================================== */
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* ==========================================
+   セクション共通スタイル
+   ========================================== */
+
+section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.section__title {
+    font-size: var(--font-size-4xl);
+    font-weight: 800;
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+}
+
+.section__subtitle {
+    font-size: var(--font-size-lg);
+    text-align: center;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+}
+
+/* ==========================================
+   ヘッダー・ナビゲーション
+   ========================================== */
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: var(--transition-base);
+}
+
+.nav__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: var(--spacing-sm) var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+}
+
+.nav__menu {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.nav__link {
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    transition: var(--transition-base);
+}
+
+.nav__link:hover {
+    color: var(--color-text-light);
+}
+
+.nav__link--cta {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    border-radius: 0;
+    padding: 0.75rem 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+}
+
+.nav__link--cta:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+}
+
+.nav__toggle {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-xs);
+}
+
+.nav__toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--color-primary);
+    transition: var(--transition-base);
+}
+
+/* ==========================================
+   ヒーローセクション
+   ========================================== */
+
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    overflow: hidden;
+}
+
+.hero__slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.hero__slide--active {
+    opacity: 1;
+}
+
+.hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(135deg, rgba(0, 102, 204, 0.85) 0%, rgba(0, 74, 153, 0.85) 100%),
+        url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+.hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #ffffff;
+    padding: var(--spacing-md);
+}
+
+.hero__title {
+    font-size: var(--font-size-5xl);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--spacing-md);
+    margin-top: 20vh;
+    line-height: 1.3;
+    animation: fadeInUp 1s ease 0.3s both;
+}
+
+.hero__subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    margin-bottom: var(--spacing-lg);
+    color: rgba(255, 255, 255, 0.9);
+    animation: fadeInUp 1s ease 0.5s both;
+    letter-spacing: 0.02em;
+}
+
+.hero__scroll {
+    position: absolute;
+    bottom: var(--spacing-lg);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: #ffffff;
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.2em;
+    animation: fadeIn 1s ease 1s both;
+}
+
+.hero__scroll-line {
+    width: 1px;
+    height: 40px;
+    background: linear-gradient(to bottom, #ffffff, transparent);
+    animation: scrollLine 2s ease-in-out infinite;
+}
+
+/* ==========================================
+   ボタン
+   ========================================== */
+
+.btn {
+    display: inline-block;
+    padding: 1.25rem 3rem;
+    font-size: var(--font-size-base);
+    font-weight: 700;
+    text-align: center;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 2px solid transparent;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: left 0.3s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn--primary {
+    background-color: #ffffff;
+    color: var(--color-primary);
+    border-color: #ffffff;
+}
+
+.btn--primary:hover {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 212, 170, 0.3);
+}
+
+.btn--secondary {
+    background-color: transparent;
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.btn--secondary:hover {
+    background-color: #ffffff;
+    color: var(--color-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.btn--large {
+    padding: 1.5rem 4rem;
+    font-size: var(--font-size-lg);
+}
+
+/* ==========================================
+   課題セクション
+   ========================================== */
+
+.challenges {
+    background-color: var(--color-bg);
+    position: relative;
+}
+
+.challenges::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 10% 20%, rgba(0, 102, 204, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(0, 212, 170, 0.03) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.challenges .container {
+    position: relative;
+    z-index: 1;
+}
+
+.challenges__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+}
+
+.challenge-card {
+    background-color: var(--color-bg-light);
+    padding: var(--spacing-lg);
+    border-radius: 0;
+    transition: var(--transition-base);
+    border: none;
+    border-left: 4px solid var(--color-accent);
+}
+
+.challenge-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.challenge-card__number {
+    font-size: var(--font-size-4xl);
+    font-weight: 900;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.15;
+    line-height: 1;
+}
+
+.challenge-card__title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+}
+
+.challenge-card__text {
+    color: var(--color-text-light);
+    line-height: 1.8;
+}
+
+/* ==========================================
+   価値セクション
+   ========================================== */
+
+.value {
+    background:
+        linear-gradient(135deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%),
+        radial-gradient(circle at 80% 80%, rgba(0, 212, 170, 0.15) 0%, transparent 50%);
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+.value::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+        radial-gradient(circle at 75% 75%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    pointer-events: none;
+}
+
+.value .container {
+    position: relative;
+    z-index: 1;
+}
+
+.value .section__title {
+    color: #ffffff;
+}
+
+.value .section__subtitle {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: var(--font-size-xl);
+}
+
+/* ==========================================
+   サービスセクション
+   ========================================== */
+
+.services {
+    background:
+        linear-gradient(to bottom, var(--color-bg) 0%, var(--color-bg-light) 50%, var(--color-bg) 100%);
+    position: relative;
+}
+
+.services::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(0, 212, 170, 0.02) 0%, transparent 30%),
+        radial-gradient(circle at 80% 70%, rgba(0, 153, 255, 0.02) 0%, transparent 30%);
+    pointer-events: none;
+}
+
+.services .container {
+    position: relative;
+    z-index: 1;
+}
+
+.service {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
+    align-items: center;
+}
+
+.service--reverse {
+    direction: rtl;
+}
+
+.service--reverse .service__content {
+    direction: ltr;
+}
+
+.service--reverse .service__image {
+    direction: ltr;
+}
+
+.service__label {
+    font-size: var(--font-size-xs);
+    font-weight: 700;
+    letter-spacing: 0.3em;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    position: relative;
+    padding-left: var(--spacing-md);
+}
+
+.service__label::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    background-color: var(--color-primary);
+}
+
+.service__title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+    letter-spacing: -0.01em;
+}
+
+.service__description {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-text-light);
+}
+
+.service__subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-lg);
+}
+
+.service__list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service__list li {
+    position: relative;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.8;
+}
+
+.service__list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.service__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
+}
+
+.service__tag {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: var(--color-bg-light);
+    border-radius: 20px;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.service__image {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.service__image-placeholder {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: var(--font-size-5xl);
+    font-weight: 900;
+    position: relative;
+    overflow: hidden;
+}
+
+.service__image-placeholder[data-text="Document Management"] {
+    background:
+        linear-gradient(135deg, rgba(0, 102, 204, 0.75) 0%, rgba(0, 74, 153, 0.75) 100%),
+        url('https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=1200&q=80');
+}
+
+.service__image-placeholder[data-text="AI Automation"] {
+    background:
+        linear-gradient(135deg, rgba(0, 102, 204, 0.75) 0%, rgba(0, 74, 153, 0.75) 100%),
+        url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&q=80');
+}
+
+.service__image-placeholder[data-text="Custom ERP"] {
+    background:
+        linear-gradient(135deg, rgba(0, 102, 204, 0.75) 0%, rgba(0, 74, 153, 0.75) 100%),
+        url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80');
+}
+
+.service__image-placeholder::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><defs><pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.5" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+    opacity: 1;
+}
+
+.service__image-placeholder::after {
+    content: attr(data-text);
+    opacity: 0.12;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: var(--font-size-6xl);
+    font-weight: 900;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   私たちについてセクション
+   ========================================== */
+
+.about {
+    background:
+        linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-light) 100%);
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 15% 15%, rgba(0, 102, 204, 0.04) 0%, transparent 25%),
+        radial-gradient(circle at 85% 85%, rgba(0, 212, 170, 0.04) 0%, transparent 25%);
+    pointer-events: none;
+}
+
+.about .container {
+    position: relative;
+    z-index: 1;
+}
+
+.about__content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about__subtitle {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    letter-spacing: -0.01em;
+    position: relative;
+    padding-left: var(--spacing-md);
+}
+
+.about__subtitle::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--color-primary);
+}
+
+.about__text {
+    font-size: var(--font-size-lg);
+    line-height: 1.9;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-light);
+}
+
+.about__list {
+    list-style: none;
+    margin: var(--spacing-md) 0;
+}
+
+.about__list li {
+    position: relative;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.8;
+}
+
+.about__list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.approach__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.approach-card {
+    background-color: var(--color-bg-light);
+    padding: var(--spacing-lg);
+    border-radius: 0;
+    border: none;
+    border-top: 3px solid var(--color-accent);
+}
+
+.approach-card__number {
+    font-size: var(--font-size-3xl);
+    font-weight: 900;
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-sm);
+    opacity: 0.15;
+    line-height: 1;
+}
+
+.approach-card__title {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.approach-card__list {
+    list-style: none;
+}
+
+.approach-card__list li {
+    position: relative;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.8;
+    font-size: var(--font-size-sm);
+}
+
+.approach-card__list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+.strengths__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-md);
+}
+
+.strength-card {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: #ffffff;
+    padding: var(--spacing-xl);
+    border-radius: 0;
+    text-align: center;
+    transition: var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.strength-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--color-accent);
+}
+
+.strength-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.strength-card__title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.strength-card__text {
+    line-height: 1.8;
+    opacity: 0.9;
+}
+
+/* ==========================================
+   会社概要セクション
+   ========================================== */
+
+.company {
+    background-color: var(--color-bg);
+    position: relative;
+}
+
+.company::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(0, 102, 204, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.company .container {
+    position: relative;
+    z-index: 1;
+}
+
+.company__table {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.company__table th,
+.company__table td {
+    padding: var(--spacing-md);
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.company__table th {
+    font-weight: 600;
+    width: 200px;
+    background-color: var(--color-bg-light);
+}
+
+.company__table td {
+    line-height: 1.8;
+}
+
+/* ==========================================
+   お問い合わせセクション
+   ========================================== */
+
+.contact {
+    background:
+        linear-gradient(135deg, var(--color-gradient-start) 0%, var(--color-gradient-end) 100%),
+        radial-gradient(circle at 50% 120%, rgba(0, 212, 170, 0.2) 0%, transparent 50%);
+    color: #ffffff;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        radial-gradient(circle at 70% 70%, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: 0 0, 20px 20px;
+    pointer-events: none;
+}
+
+.contact .container {
+    position: relative;
+    z-index: 1;
+}
+
+.contact .section__title {
+    color: #ffffff;
+}
+
+.contact .section__subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.contact__buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ==========================================
+   フッター
+   ========================================== */
+
+.footer {
+    background-color: var(--color-bg-dark);
+    color: #ffffff;
+    padding: var(--spacing-xl) 0 var(--spacing-md);
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer__logo {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    letter-spacing: 0.1em;
+}
+
+.footer__nav {
+    display: flex;
+    gap: var(--spacing-md);
+}
+
+.footer__link {
+    font-size: var(--font-size-sm);
+    opacity: 0.8;
+    transition: var(--transition-base);
+}
+
+.footer__link:hover {
+    opacity: 1;
+}
+
+.footer__bottom {
+    text-align: center;
+}
+
+.footer__copyright {
+    font-size: var(--font-size-xs);
+    opacity: 0.6;
+}
+
+/* ==========================================
+   アニメーション
+   ========================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scrollLine {
+    0%, 100% {
+        transform: scaleY(1);
+        transform-origin: top;
+    }
+    50% {
+        transform: scaleY(1.5);
+        transform-origin: top;
+    }
+}
+
+/* スクロールアニメーション用のクラス */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================
+   レスポンシブデザイン
+   ========================================== */
+
+@media (max-width: 1024px) {
+    .hero__title {
+        font-size: var(--font-size-6xl);
+    }
+
+    .section__title {
+        font-size: var(--font-size-4xl);
+    }
+
+    .service {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xl);
+    }
+
+    .service--reverse {
+        direction: ltr;
+    }
+
+    .service__image {
+        height: 500px;
+    }
+
+    .service__title {
+        font-size: var(--font-size-3xl);
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-lg: 3rem;
+        --spacing-xl: 5rem;
+        --spacing-2xl: 6rem;
+        --spacing-3xl: 8rem;
+    }
+
+    section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .nav__menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background-color: var(--color-bg);
+        flex-direction: column;
+        padding: var(--spacing-lg);
+        transition: var(--transition-base);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav__menu.active {
+        left: 0;
+    }
+
+    .nav__toggle {
+        display: flex;
+    }
+
+    .hero__title {
+        font-size: var(--font-size-5xl);
+        line-height: 1.1;
+    }
+
+    .hero__subtitle {
+        font-size: var(--font-size-xl);
+    }
+
+    .section__title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .challenges__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service__title {
+        font-size: var(--font-size-3xl);
+    }
+
+    .service__image {
+        height: 350px;
+    }
+
+    .approach__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .strengths__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer__content {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        text-align: center;
+    }
+
+    .footer__nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .company__table th,
+    .company__table td {
+        display: block;
+        width: 100%;
+    }
+
+    .company__table th {
+        padding-bottom: var(--spacing-xs);
+    }
+
+    .company__table td {
+        padding-top: var(--spacing-xs);
+    }
+
+    .contact__buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn--large {
+        width: 100%;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero__title {
+        font-size: var(--font-size-4xl);
+        text-transform: none;
+    }
+
+    .section__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .service__title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .about__subtitle {
+        font-size: var(--font-size-2xl);
+    }
+
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .service__image {
+        height: 300px;
+    }
+}
