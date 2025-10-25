@@ -1003,6 +1003,34 @@ section {
     flex-wrap: wrap;
 }
 
+.contact__form-container {
+    max-width: 800px;
+    margin: 2.5rem auto 0;
+    padding: 0 1.25rem;
+}
+
+.contact__form-container iframe {
+    width: 100%;
+    max-width: 640px;
+    height: 1048px;
+    border: none;
+    border-radius: 8px;
+    background: #ffffff;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 768px) {
+    .contact__form-container {
+        padding: 0 0.5rem;
+    }
+
+    .contact__form-container iframe {
+        height: 900px;
+    }
+}
+
 /* ==========================================
    フッター
    ========================================== */
