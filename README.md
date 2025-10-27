@@ -155,7 +155,7 @@ https://www.speelead.com/
 
 ## ライセンス
 
-© 2024 TRIKO Co., Ltd. All rights reserved.
+© 2025 TRIKO Co., Ltd. All rights reserved.
 
 ## お問い合わせ
 
