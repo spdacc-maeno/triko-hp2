@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://triko.co.jp/sitemap.xml

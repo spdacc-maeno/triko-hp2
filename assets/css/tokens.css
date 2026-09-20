@@ -1,0 +1,81 @@
+/* ==========================================================
+   TRIKO design tokens
+   配色はロゴ（紺・金・銀）由来。要件書 8-2〜8-4 を参照。
+   ========================================================== */
+:root {
+  color-scheme: light;
+
+  /* color */
+  --ink: #1C2A5E;
+  --ink-2: #3B4A7A;
+  --ink-deep: #121B3D;
+  --gold: #B8963E;
+  --gold-soft: #E9DFC4;
+  --silver: #A8AEB8;
+  --text: #1F2433;
+  --text-2: #5B6272;
+  --paper: #F6F5F1;
+  --mist: #EEF0F4;
+  --white: #FFFFFF;
+  --line: #D9DCE3;
+  --line-strong: #B9BEC9;
+  --focus: #2F6BFF;
+
+  /* on-ink (紺背景上) */
+  --on-ink: rgba(255, 255, 255, 0.92);
+  --on-ink-2: rgba(255, 255, 255, 0.68);
+  --on-ink-line: rgba(255, 255, 255, 0.18);
+
+  /* typography */
+  --font-sans: "IBM Plex Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --fs-display: clamp(1.625rem, 3.6vw, 3.125rem);
+  --fs-h1: clamp(1.875rem, 3.2vw, 2.75rem);
+  --fs-h2: clamp(1.5rem, 2.6vw, 2.25rem);
+  --fs-h3: 1.25rem;
+  --fs-lead: 1.125rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-eyebrow: 0.75rem;
+
+  /* spacing (8px base) */
+  --sp-1: 4px;
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-5: 24px;
+  --sp-6: 32px;
+  --sp-7: 48px;
+  --sp-8: 64px;
+  --sp-9: 96px;
+  --sp-10: 128px;
+
+  --section-y: var(--sp-10);
+  --container: 1120px;
+  --measure: 680px;
+  --gutter: 24px;
+  --page-x: 40px;
+  --header-h: 72px;
+
+  --radius: 4px;
+  --radius-sm: 2px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+  --dur: 0.6s;
+}
+
+@media (max-width: 1023px) {
+  :root {
+    --section-y: var(--sp-9);
+    --page-x: 32px;
+  }
+}
+
+@media (max-width: 639px) {
+  :root {
+    --section-y: 72px;
+    --page-x: 20px;
+    --gutter: 16px;
+    --header-h: 60px;
+  }
+}
