@@ -254,6 +254,47 @@
   color: var(--on-ink);
 }
 
+/* 上段（専門家）を大きく、下段（専門家が使う開発ツール＝AI）を小さく淡く */
+.fig-layer--main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 150px;
+  padding: var(--sp-6);
+}
+
+.fig-layer--main strong {
+  font-size: 1.125rem;
+  margin-bottom: 10px;
+}
+
+.fig-layer--main ul {
+  font-size: 0.875rem;
+  gap: 6px 18px;
+}
+
+.fig-layer--tool {
+  padding: 10px var(--sp-4);
+  border: 1px solid var(--silver);
+  background: var(--mist);
+}
+
+.fig-layer--tool strong {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-2);
+  margin-bottom: 4px;
+}
+
+.fig-layer--tool ul {
+  font-size: 0.75rem;
+  gap: 2px 12px;
+}
+
+.fig-layer--tool ul li::before {
+  color: var(--silver);
+}
+
 .fig-sync {
   display: flex;
   align-items: center;
@@ -564,8 +605,41 @@
   color: var(--text-2);
 }
 
+/* 「受注」と隣の「出荷」の間の「連携」線 */
+.fig-migrate__blocks--linked {
+  grid-template-columns: 1fr auto repeat(5, 1fr);
+}
+
+.fig-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--ink);
+  line-height: 1.3;
+  white-space: nowrap;
+}
+
+.fig-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1.5px solid var(--gold);
+}
+
+.fig-link span {
+  position: relative;
+  padding: 0 2px;
+  transform: translateY(-11px);
+}
+
 .fig-migrate .fig-arrow {
-  width: 72px;
+  width: 96px;
 }
 
 .fig-migrate__blocks .fig-box--new {
@@ -607,8 +681,9 @@
     transform: rotate(90deg);
   }
 
-  .fig-migrate__blocks {
-    grid-template-columns: repeat(3, 1fr);
+  .fig-migrate__blocks,
+  .fig-migrate__blocks--linked {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
